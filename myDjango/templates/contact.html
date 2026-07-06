@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
-<body class = "index">
+<body class = "contact">
     <header>
         <a href="#" class="logo"><img src="{% static 'logo.png' %}" alt="Logo image"></a>
             <nav class="navbar">
@@ -22,11 +22,14 @@
             </nav>
     </header>
     <div class="main">
-        <h1>Welcome to Metflix</h1>
-        <p>Discover your next favorite show!</p>
+        <h1>Contact Us</h1>
+        <p>If you have any questions or feedback, feel free to reach out to us!</p>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <textarea id="message" placeholder="Your Message"></textarea>   
+
         <div id="buttons">
-            <button id="btn">Get Started</button>
-            <button id="btn">Explore More</button>
+            <button id="btn">Get in Touch</button>
         </div>
     </div>
 </body>
