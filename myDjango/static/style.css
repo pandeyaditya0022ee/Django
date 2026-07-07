@@ -80,6 +80,8 @@ header .navbar ul .active{
 }
 header .navbar ul .active:hover{
     background-color: var(--light);
+    color: var(--black);
+    border-radius: 5rem;
     border: .1rem solid var(--light);
     letter-spacing: .1rem;
     box-shadow: 0 2px 8px var(--red);
@@ -189,6 +191,13 @@ header .navbar ul li i{
     border-radius: 5rem;
     border: none;
     box-shadow: 0 4px 10px rgba(254, 253, 253, 0.288);
+    
+}
+.index .main #btn:hover{
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 4px 10px rgba(254, 253, 253, 0.588);
+    letter-spacing: .1rem;
+    transition: .2s;
     
 }
 
