@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Metflix{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <header>
+        <a href="http://127.0.0.1:8000/" class="logo"><img src="{% static 'logo.png' %}" alt="Logo image"></a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="http://127.0.0.1:8000/" class="active">Home</a></li>
+                    <li><a href="http://127.0.0.1:8000/about/">About</a></li>
+                    <li><a href="http://127.0.0.1:8000/contact/">Contact</a></li>
+                    <li><input type="text" id="search" placeholder="Search..." ><i class="fas fa-search"></i></li>  
+                </ul>
+            </nav>
+    </header>
+    {% block content %}{% endblock %}
+    <footer>
+        <div class="footer-top">
+            <a href="#" class="footer-logo">
+                <img src="{% static 'logo.png' %}" alt="Metflix logo">
+            </a>
+        </div>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="http://127.0.0.1:8000/">Home</a></li>
+                    <li><a href="http://127.0.0.1:8000/about/">About</a></li>
+                    <li><a href="http://127.0.0.1:8000/contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Trending</h4>
+                <ul>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Top Picks</a></li>
+                    <li><a href="#">Popular Shows</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <p>Get help with streaming, account access, and device compatibility.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Newsletter</h4>
+                <p>Stay updated with the latest Metflix drops and recommendations.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> hello@metflix.com</p>
+                <p><i class="fas fa-phone"></i> (+1) 561-933-9030</p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2026 Metflix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="{% static 'script.js' %}"></script>
+</html> 

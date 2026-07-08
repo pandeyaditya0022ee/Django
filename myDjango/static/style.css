@@ -12,6 +12,8 @@
     --white: #fff;
     --red: #ea0e0e;
     --light: #f5f5f5;
+    --gray: #b8b8b8;
+    --panel: rgba(10, 10, 10, 0.92);
 }
 html{
     font-size: 62.5%;
@@ -151,10 +153,15 @@ header .navbar ul li i{
     font-size: 1.2rem;
     cursor: pointer;
 }
+header .navbar ul li i:hover{
+    color: var(--red);
+
+    transition: 0.2s;
+}
 
 
 
-.main::before{
+.home::before, .about::before, .contact::before{
     content: "";
     position: fixed;
     inset: 0;
@@ -163,26 +170,26 @@ header .navbar ul li i{
     z-index: -1; 
 }
 
-.main{
+.home, .about, .contact{
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.index .main h1{
+.home h1{
     font-size: 6rem;
     color: #fff;
     text-align: center;
     margin-bottom: 2rem;
 }
-.index .main p{
+.home p{
     font-size: 2rem;
     color: #fff;
     text-align: center;
     margin-bottom: 2rem;
 }
-.index .main #btn{
+#btn{
     margin: 1rem;
     padding: 1rem 2rem;
     font-size: 1.6rem;
@@ -193,7 +200,7 @@ header .navbar ul li i{
     box-shadow: 0 4px 10px rgba(254, 253, 253, 0.288);
     
 }
-.index .main #btn:hover{
+#btn:hover{
     background-color: rgb(255, 0, 0);
     box-shadow: 0 4px 10px rgba(254, 253, 253, 0.588);
     letter-spacing: .1rem;
@@ -201,34 +208,34 @@ header .navbar ul li i{
     
 }
 
-.about .main h1{
+.about h1{
     font-size: 3rem;
     color: #fff;
     text-align: center;
     margin-bottom: 2rem;
 }
-.about .main p{
+.about p{
     font-size: 1.5rem;
     color: #fff;
     text-align: center;
     margin-bottom: 1rem;
 }
 
-.contact .main h1{
+.contact h1{
     font-size: 3rem;
     color: #fff;
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.contact .main p{
+.contact p{
     font-size: 1.5rem;
     color: #fff;
     text-align: center;
     margin-bottom: 1rem;
 }
 
-.contact .main input, .contact .main textarea{
+.contact input, .contact textarea{
     display: block;
     width: 50%;
     margin: 1rem auto;
@@ -238,18 +245,203 @@ header .navbar ul li i{
     border: none;
     box-shadow: 0 4px 10px rgba(254, 253, 253, 0.288);
 }
-.contact .main input:focus, .contact .main textarea:focus{
+.contact input:focus, .contact textarea:focus{
     outline: none;
     box-shadow: 0 4px 10px rgba(237, 6, 6, 0.288);
 }
 
-.about .main #btn, .contact .main #btn{
-    margin: 1rem;
-    padding: 1rem 2rem;
-    font-size: 1.6rem;
-    color: #fff;
-    background-color: rgb(237, 6, 6);
-    border-radius: 5rem;
-    border: none;
-    box-shadow: 0 4px 10px rgba(254, 253, 253, 0.288);
+
+footer{
+    background: linear-gradient(180deg, rgba(18, 18, 18, 0.98) 0%, rgba(5, 5, 5, 0.98) 100%);
+    border-top: 3px solid var(--red);
+    padding: 3rem 2rem 2rem;
+    margin-top: 5rem;
+    backdrop-filter: blur(14px);
 }
+
+.footer-top{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(234, 14, 14, 0.18);
+    margin-bottom: 2rem;
+}
+
+.footer-logo{
+    color: var(--red);
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.footer-logo:hover{
+    color: var(--light);
+    transform: scale(1.05);
+    letter-spacing: .15rem;
+}
+
+.footer-logo img{
+    height: 8rem;
+    width: 100%;
+    object-fit: cover;
+    border: 2px solid var(--red);
+    transition: 0.3s ease;
+}
+
+.footer-logo:hover img{
+    border-color: var(--light);
+    box-shadow: 0 0 10px var(--red);
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.footer-column{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-column h4{
+    font-size: 1.3rem;
+    color: var(--red);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: .05rem;
+}
+
+.footer-column ul{
+    list-style: none;
+}
+
+.footer-column ul li{
+    margin: 0.5rem 0;
+}
+
+.footer-column ul li a{
+    color: var(--light);
+    font-size: 1rem;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.footer-column ul li a:hover{
+    color: var(--red);
+    margin-left: 5px;
+    text-shadow: 0 0 5px var(--red);
+}
+
+.footer-column p{
+    color: var(--gray);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.newsletter-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.newsletter-form input{
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--red);
+    border-radius: 5rem;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--light);
+    font-size: 0.95rem;
+    transition: 0.3s ease;
+}
+
+.newsletter-form input::placeholder{
+    color: var(--gray);
+}
+
+.newsletter-form input:focus{
+    outline: none;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 10px rgba(234, 14, 14, 0.25);
+    border-color: var(--light);
+}
+
+.newsletter-form .btn{
+    padding: 0.8rem 1.5rem;
+    background: var(--red);
+    color: var(--black);
+    border: none;
+    border-radius: 5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 1rem;
+}
+
+.newsletter-form .btn:hover{
+    background: var(--light);
+    box-shadow: 0 4px 12px rgba(234, 14, 14, 0.35);
+    transform: translateY(-2px);
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(234, 14, 14, 0.18);
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-contact h4{
+    color: var(--red);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-contact p{
+    color: var(--light);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.footer-contact p:hover{
+    color: var(--red);
+    margin-left: 5px;
+}
+
+.footer-contact i{
+    color: var(--red);
+    font-size: 1rem;
+}
+
+.footer-copyright{
+    text-align: center;
+    flex: 1;
+}
+
+.footer-copyright p{
+    color: var(--gray);
+    font-size: 0.95rem;
+    letter-spacing: .05rem;
+}
+
