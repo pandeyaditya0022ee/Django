@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}Movie Details{% endblock %}
+
+{% block content %}
+    <div class="movie-detail">
+        <h1>{{ movie.name }}</h1>
+        <img src="{{ movie.image.url }}" alt="{{ movie.name }}">
+        <p>Genre: {{ movie.genre }}</p>
+        <p>Description: {{ movie.description }}</p>
+        <p>Date Added: {{ movie.date_added }}</p>
+    </div>
+{% endblock %}

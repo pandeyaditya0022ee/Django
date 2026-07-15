@@ -161,7 +161,7 @@ header .navbar ul li i:hover{
 
 
 
-.home::before, .about::before, .contact::before{
+.home::before, .about::before, .contact::before, .hero::before{
     content: "";
     position: fixed;
     inset: 0;
@@ -170,21 +170,23 @@ header .navbar ul li i:hover{
     z-index: -1; 
 }
 
-.home, .about, .contact{
+.home, .about, .contact, .hero{
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.home h1{
+.home h1, .hero h1{
     font-size: 6rem;
+    font-weight: 800;
     color: #fff;
     text-align: center;
     margin-bottom: 2rem;
 }
-.home p{
+.home p, .hero p{
     font-size: 2rem;
+    font-weight: 100;
     color: #fff;
     text-align: center;
     margin-bottom: 2rem;
@@ -249,6 +251,103 @@ header .navbar ul li i:hover{
     outline: none;
     box-shadow: 0 4px 10px rgba(237, 6, 6, 0.288);
 }
+
+
+
+.hero .posters{
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+}
+.hero .posters:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(237, 6, 6, 0.588);
+    transition: 0.3s ease;
+}
+
+.hero .posters .movie img{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(254, 253, 253, 0.288);
+    transition: 0.3s ease;
+}
+
+.hero .posters .movie h2{
+    font-size: 1.5rem;
+    color: var(--white);
+    text-align: center;
+    margin-top: 1rem;
+}
+.hero .posters .movie p{
+    font-size: 1rem;
+    color: var(--gray);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+.hero .posters .movie button{
+    
+    margin: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    color: #fff;
+    background-color: rgb(237, 6, 6);
+    border-radius: 5rem;
+    border: none;
+    box-shadow: 0 4px 10px rgba(254, 253, 253, 0.288);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 footer{
@@ -444,4 +543,7 @@ footer{
     font-size: 0.95rem;
     letter-spacing: .05rem;
 }
+
+
+
 

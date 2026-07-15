@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+
+{% block title %}App Page of Metflix{% endblock %}
+
+{% block content %}
+    <div class="hero">
+        <h1>Welcome to My App</h1>
+        <p>This is the main page of Metflix application.</p>
+        <div class = "posters">
+            {% for movie in movies %}
+                <div class="movie">
+                    <img src="{{ movie.image.url }}" alt="{{ movie.name }}">
+                    <h2>{{ movie.name }}</h2>
+                    <p>Genre: {{ movie.genre }}</p>
+                    <a href="{% url 'movie_detail' movie.id %}">
+                        <button>View Details</button>
+                    </a>
+                    
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

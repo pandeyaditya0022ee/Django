@@ -12,7 +12,6 @@
     --color-orange-500: oklch(70.5% 0.213 47.604);
     --color-green-500: oklch(72.3% 0.219 149.579);
     --color-blue-100: oklch(93.2% 0.032 255.585);
-    --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-gray-50: oklch(98.5% 0.002 247.839);
     --color-black: #000;
     --spacing: 0.25rem;
@@ -200,6 +199,12 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
   .block {
     display: block;
   }
@@ -224,18 +229,21 @@
   .justify-center {
     justify-content: center;
   }
+  .rounded {
+    border-radius: 0.25rem;
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .bg-blue-100 {
-    background-color: var(--color-blue-100);
-  }
   .bg-gray-50 {
     background-color: var(--color-gray-50);
   }
-  .p-4 {
-    padding: calc(var(--spacing) * 4);
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+  .text-center {
+    text-align: center;
   }
   .font-serif {
     font-family: var(--font-serif);
@@ -265,12 +273,6 @@
   }
   .text-green-500 {
     color: var(--color-green-500);
-  }
-  .text-orange-500 {
-    color: var(--color-orange-500);
-  }
-  .text-red-500 {
-    color: var(--color-red-500);
   }
   .underline {
     text-decoration-line: underline;
