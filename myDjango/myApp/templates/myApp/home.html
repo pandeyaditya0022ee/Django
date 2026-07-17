@@ -12,9 +12,16 @@
                 <div class="movie">
                     <img src="{{ movie.image.url }}" alt="{{ movie.name }}">
                     <h2>{{ movie.name }}</h2>
-                    <p>Genre: {{ movie.genre }}</p>
+                    <p>
+                        Genre:
+                        {% for genre in movie.genres.all %}
+                            {{ genre.name }}{% if not forloop.last %}, {% endif %}
+                        {% empty %}
+                            Not specified
+                        {% endfor %}
+                    </p>
                     <a href="{% url 'movie_detail' movie.id %}">
-                        <button>View Details</button>
+                        <button id="btn">View Details</button>
                     </a>
                     
                 </div>

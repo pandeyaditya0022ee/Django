@@ -3,11 +3,21 @@
 {% block title %}Movie Details{% endblock %}
 
 {% block content %}
-    <div class="movie-detail">
+    <div class="movie_detail">
         <h1>{{ movie.name }}</h1>
         <img src="{{ movie.image.url }}" alt="{{ movie.name }}">
-        <p>Genre: {{ movie.genre }}</p>
+        <p>
+            Genre:
+            {% for genre in movie.genres.all %}
+                {{ genre.name }}{% if not forloop.last %}, {% endif %}
+            {% empty %}
+                Not specified
+            {% endfor %}
+        </p>
         <p>Description: {{ movie.description }}</p>
         <p>Date Added: {{ movie.date_added }}</p>
+
+        <a href="#" id="btn">Watch Trailer</a>
+        <a href="http://127.0.0.1:8000/myApp/" id="btn">Back to Movies</a>
     </div>
-{% endblock %}
+{% endblock %}  

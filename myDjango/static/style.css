@@ -161,7 +161,7 @@ header .navbar ul li i:hover{
 
 
 
-.home::before, .about::before, .contact::before, .hero::before{
+.home::before, .about::before, .contact::before, .hero::before, .movie_detail::before{
     content: "";
     position: fixed;
     inset: 0;
@@ -194,7 +194,7 @@ header .navbar ul li i:hover{
 #btn{
     margin: 1rem;
     padding: 1rem 2rem;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: #fff;
     background-color: rgb(237, 6, 6);
     border-radius: 5rem;
@@ -203,10 +203,11 @@ header .navbar ul li i:hover{
     
 }
 #btn:hover{
-    background-color: rgb(255, 0, 0);
-    box-shadow: 0 4px 10px rgba(254, 253, 253, 0.588);
+    background-color: rgb(67, 65, 65);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.779);
     letter-spacing: .1rem;
-    transition: .2s;
+    transition: .3s;
     
 }
 
@@ -252,26 +253,31 @@ header .navbar ul li i:hover{
     box-shadow: 0 4px 10px rgba(237, 6, 6, 0.288);
 }
 
-
-
-.hero .posters{
-    width: 200px;
+.posters{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+}
+.movie{
+    display: flex;
+    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 1rem;
-}
-.hero .posters:hover{
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(237, 6, 6, 0.588);
+    border-radius: 5px;
+    gap: 1rem;
     transition: 0.3s ease;
+    background-color: #000;
+}
+.movie:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(254, 253, 253, 0.288);
 }
 
-.hero .posters .movie img{
+.movie img{
     width: 200px;
     height: 300px;
     object-fit: cover;
@@ -280,29 +286,60 @@ header .navbar ul li i:hover{
     transition: 0.3s ease;
 }
 
-.hero .posters .movie h2{
+.movie h2{
     font-size: 1.5rem;
     color: var(--white);
     text-align: center;
     margin-top: 1rem;
 }
-.hero .posters .movie p{
+.movie p{
     font-size: 1rem;
     color: var(--gray);
     text-align: center;
     margin-top: 0.5rem;
 }
-.hero .posters .movie button{
-    
-    margin: 1rem;
-    padding: 1rem 2rem;
-    font-size: 1.6rem;
-    color: #fff;
-    background-color: rgb(237, 6, 6);
-    border-radius: 5rem;
-    border: none;
-    box-shadow: 0 4px 10px rgba(254, 253, 253, 0.288);
+
+
+.movie_detail{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
 }
+.movie_detail img{
+    width: auto;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(254, 253, 253, 0.288);
+    transition: 0.3s ease;
+}
+
+.movie_detail h1{
+    font-size: 3rem;
+    color: var(--white);
+    text-align: center;
+    margin-top: 125px;
+}
+
+.movie_detail p{
+    width: 60%;
+    font-size: 1.5rem;
+    color: var(--gray);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
+
+
+
+
+
+
+
 
 
 
