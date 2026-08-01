@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block title %}Movie Details{% endblock %}
+{% block title %}{{movie.name}}{% endblock %}
 
 {% block content %}
     <div class="movie_detail">
@@ -16,6 +16,7 @@
         </p>
         <p>Description: {{ movie.description }}</p>
         <p>Date Added: {{ movie.date_added }}</p>
+        
 
         <a href="#" id="btn">Watch Trailer</a>
         <a href="http://127.0.0.1:8000/myApp/" id="btn">Back to Movies</a>
