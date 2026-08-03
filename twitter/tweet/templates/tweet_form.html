@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Welcome To Twitter
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome To Twitter</h1>
+    <p>This is a simple Twitter clone built with Django.</p>
+
+    <h2>{% if form.instance.pk %}Edit Tweet{% else %}Create Tweet{% endif %}</h2>
+    <form method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary mb-3">{% if form.instance.pk %}Update{% else %}Create{% endif %}</button>
+    </form>
+    <a href="{% url 'tweet_list' %}" class="btn btn-secondary">Back to Tweets</a>
+{% endblock %}
