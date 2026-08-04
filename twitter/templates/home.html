@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Welcome To Twitter
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome To Twitter</h1>
+    <p>This is a simple Twitter clone built with Django.</p>
+    <a class="btn btn-primary" href="{% url 'tweet_list' %}">View Tweets</a>
+{% endblock %}
