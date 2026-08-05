@@ -18,7 +18,7 @@
                 <ul>
                     <li><a href="{% url 'index' %}" class="active">Home</a></li>
                     <li><a href="{% url 'movie' %}">Movies</a></li>
-                    <li><a href="{% url 'movie' %}">Watchlist</a></li>
+                    <li><a href="{% url 'watchlist' %}">Watchlist</a></li>
                     <li><input type="text" id="search" placeholder="Search..." ></li>  
                     <li><a href="#">Search</a></li>
                     <li>{% if user.is_authenticated %}
@@ -35,7 +35,9 @@
                 </ul>
             </nav>
     </header>
+    
     {% block content %}{% endblock %}
+    
     <footer>
         <div class="footer-top">
             <a href="#" class="footer-logo">
@@ -46,17 +48,17 @@
             <div class="footer-column">
                 <h4>Explore</h4>
                 <ul>
-                    <li><a href="http://127.0.0.1:8000/">Home</a></li>
-                    <li><a href="http://127.0.0.1:8000/about/">About</a></li>
-                    <li><a href="http://127.0.0.1:8000/contact/">Contact</a></li>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Trending</h4>
                 <ul>
-                    <li><a href="#">New Releases</a></li>
-                    <li><a href="#">Top Picks</a></li>
-                    <li><a href="#">Popular Shows</a></li>
+                    <li><a href="{% url 'movie' %}">New Releases</a></li>
+                    <li><a href="{% url 'movie' %}">Top Picks</a></li>
+                    <li><a href="{% url 'movie' %}">Popular Shows</a></li>
                 </ul>
             </div>
             <div class="footer-column">

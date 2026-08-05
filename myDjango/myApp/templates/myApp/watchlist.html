@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}Watchlist{% endblock %}
+
+{% block content %}
+    <div class="watchlist">
+        <div class="watchlist-page">
+        <h1>My Watchlist</h1>
+        <p class="watchlist-subtitle">Saved Movies at a Place.</p>
+    </div>
+    {% if watchlist_movies %}
+        <div class="posters">
+            {% for movie in watchlist_movies %}
+                <div class="movie">
+                    <img src="{{ movie.image.url }}" alt="{{ movie.name }}">
+                    <h2>{{ movie.name }}</h2>
+                    <p>Release Date: {{ movie.release_date }}</p>
+                    <p>Rating: {{ movie.rating }}</p>
+                    <a href="{% url 'movie_detail' movie.id %}">
+                        <button id="btn" type="button">View Details</button>
+                    </a>
+                    <a href="{% url 'remove_from_watchlist' movie.id%}">
+                        <button type="button" id="btn">Remove</button>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="watchlist-empty">Your Watchlist is Empty.</p>
+    {% endif %}
+    </div>
+{% endblock %}

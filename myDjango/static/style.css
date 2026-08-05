@@ -161,7 +161,7 @@ header .navbar ul li i:hover{
 
 
 
-.hero::before, .about::before, .contact::before, .hero::before, .movie_detail::before{
+.hero::before, .about::before, .contact::before, .hero::before, .movie_detail::before, .watchlist::before{
     content: "";
     position: fixed;
     inset: 0;
@@ -169,6 +169,7 @@ header .navbar ul li i:hover{
     opacity: 0.8;
     z-index: -1; 
 }
+
 
 .hero, .about, .contact, .hero{
     min-height: 100vh;
@@ -297,6 +298,34 @@ header .navbar ul li i:hover{
     color: var(--gray);
     text-align: center;
     margin-top: 0.5rem;
+}
+
+.watchlist{
+    height: 100vh;
+}
+
+.watchlist-page{
+    margin: 13rem auto 2rem;
+    text-align: center;
+}
+
+.watchlist-page h1{
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.watchlist-subtitle{
+    font-size: 1.4rem;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+.watchlist-empty{
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--gray);
+    margin: 2rem 0 0;
 }
 
 

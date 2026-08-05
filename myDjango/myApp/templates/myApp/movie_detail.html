@@ -16,9 +16,17 @@
         </p>
         <p>Description: {{ movie.description }}</p>
         <p>Date Added: {{ movie.date_added }}</p>
-        
 
-        <a href="#" id="btn">Watch Trailer</a>
-        <a href="http://127.0.0.1:8000/myApp/" id="btn">Back to Movies</a>
+        {% if in_watchlist %}
+            <p>This movie is already in your watchlist.</p>
+        {% else %}
+            <form method="post" action="{% url 'add_to_watchlist' movie.id %}">
+                {% csrf_token %}
+                <button type="submit" id="btn">Add to Watchlist</button>
+            </form>
+        {% endif %}
+
+        <a href="{{ movie.trailer_link }}" id="btn" target="_blank">Watch Trailer</a>
+        <a href="{% url 'movie' %}" id="btn">Back to Movies</a>
     </div>
 {% endblock %}  
