@@ -20,6 +20,11 @@
                             Not specified
                         {% endfor %}
                     </p>
+                    <p>Release Date: {{ movie.release_date }}</p>
+                    <p>Rating: {{ movie.rating }}</p>
+                    <a href="{% url 'movie_detail' movie.id %}">
+                        <button id="btn">Add to Watchlist</button>
+                    </a>
                     <a href="{% url 'movie_detail' movie.id %}">
                         <button id="btn">View Details</button>
                     </a>

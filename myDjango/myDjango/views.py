@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def home(request):
+def index(request):
     # return HttpResponse("Hello, welcome to my Django application! Home page is under construction.")
     return render(request, 'website/index.html')
 def about(request):

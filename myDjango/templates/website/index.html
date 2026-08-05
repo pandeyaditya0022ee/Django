@@ -1,14 +1,14 @@
 {% extends "layout.html" %}
 
-{% block title %}Home - Metflix{% endblock %}
+{% block title %}movie - Metflix{% endblock %}
 
 {% block content %}
-    <div class="home">
+    <div class="hero">
         <h1>Welcome to Metflix</h1>
         <p>Discover your next favorite show!</p>
         <div id="buttons">
-            <a href="http://127.0.0.1:8000/myApp/"><button id="btn">Get Started</button></a>
-            <a href="http://127.0.0.1:8000/about/"><button id="btn">Explore More</button></a>
+            <a href="{% url 'movie' %}"><button id="btn">Get Started</button></a>
+            <a href="{% url 'about' %}"><button id="btn">Explore More</button></a>
         </div>
     </div>
 {% endblock %}

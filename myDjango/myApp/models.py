@@ -14,6 +14,8 @@ class Movies(models.Model):
     image = models.ImageField(upload_to='posters/')
     date_added = models.DateTimeField(default = timezone.now)
     genres = models.ManyToManyField(Genre, blank=True)
+    rating = models.FloatField(default=0.0)
+    release_date = models.DateField(null=True, blank=True)
     description = models.TextField(default='No description available')
 
     def __str__(self):

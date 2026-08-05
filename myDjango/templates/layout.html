@@ -16,11 +16,22 @@
         <a href="http://127.0.0.1:8000/" class="logo"><img src="{% static 'logo.png' %}" alt="Logo image"></a>
             <nav class="navbar">
                 <ul>
-                    <li><a href="http://127.0.0.1:8000/" class="active">Home</a></li>
-                    <li><a href="http://127.0.0.1:8000/myApp/">Movies</a></li>
-                    <li><a href="http://127.0.0.1:8000/contact/">Contact</a></li>
+                    <li><a href="{% url 'index' %}" class="active">Home</a></li>
+                    <li><a href="{% url 'movie' %}">Movies</a></li>
+                    <li><a href="{% url 'movie' %}">Watchlist</a></li>
                     <li><input type="text" id="search" placeholder="Search..." ></li>  
                     <li><a href="#">Search</a></li>
+                    <li>{% if user.is_authenticated %}
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit" id="btn">Logout</button>
+
+                        </form>
+                    {% else %}
+                        <a id="btn" href="{% url 'login' %}">Login</a>
+                        <a id="btn" href="{% url 'register' %}">Register</a> 
+                            
+                    {% endif %}</li>
                 </ul>
             </nav>
     </header>
