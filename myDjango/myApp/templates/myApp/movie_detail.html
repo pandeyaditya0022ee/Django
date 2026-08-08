@@ -17,6 +17,14 @@
         <p>Description: {{ movie.description }}</p>
         <p>Date Added: {{ movie.date_added }}</p>
 
+       
+
+        {% if movie.trailer_link %}
+            <a href="{{ movie.trailer_link }}" id="btn" target="_blank">Watch Trailer</a>
+        {% else %}
+            <p>Trailer not available.</p>
+        {% endif %}
+
         {% if in_watchlist %}
             <p>This movie is already in your watchlist.</p>
         {% else %}
@@ -25,8 +33,6 @@
                 <button type="submit" id="btn">Add to Watchlist</button>
             </form>
         {% endif %}
-
-        <a href="{{ movie.trailer_link }}" id="btn" target="_blank">Watch Trailer</a>
         <a href="{% url 'movie' %}" id="btn">Back to Movies</a>
     </div>
 {% endblock %}  
