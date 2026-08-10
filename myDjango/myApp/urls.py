@@ -7,6 +7,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.movie, name='movie'),
+    path('search/', views.search_movies, name='search'),
     path('movie/<int:movie_id>/', views.movie_detail, name='movie_detail'),
     path('watchlist/add/<int:movie_id>/', views.add_to_watchlist, name='add_to_watchlist'),
     path('watchlist/', views.watchlist, name='watchlist'),

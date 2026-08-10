@@ -5,6 +5,7 @@ from .models import Movies, WatchList
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
+from django.db.models import Q
 
 
 
@@ -36,6 +37,21 @@ def remove_from_watchlist(request, movie_id):
     movie = get_object_or_404(Movies, id=movie_id)
     WatchList.objects.filter(user=request.user, movie=movie).delete()
     return redirect('watchlist')
+
+
+def search_movies(request):
+    query = request.GET.get('q', '').strip()
+    
+    if query:
+        movies = Movies.objects.filter(
+                Q(name__icontains=query) |
+                Q(description__icontains=query) |
+                Q(genres__name__icontains=query)
+                ).distinct()
+    else:
+        movies = Movies.objects.all()
+    
+    return render(request,"myApp/movie.html", {"movies": movies, "query": query})
 
 
 def register(request):

@@ -19,8 +19,13 @@
                     <li><a href="{% url 'index' %}" class="active">Home</a></li>
                     <li><a href="{% url 'movie' %}">Movies</a></li>
                     <li><a href="{% url 'watchlist' %}">Watchlist</a></li>
-                    <li><input type="text" id="search" placeholder="Search..." ></li>  
-                    <li><a href="#">Search</a></li>
+                    <li></li>  
+                    <li>
+                        <form method="GET" action="{% url 'search' %}">
+                            <input type="text" name="q" id="search" placeholder="Search..." >
+                            <button type = "submit" id = "btn">Search</button>
+                        </form>
+                    </li>
                     <li>{% if user.is_authenticated %}
                         <form method="post" action="{% url 'logout' %}">
                             {% csrf_token %}
